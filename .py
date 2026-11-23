@@ -1,12 +1,18 @@
+def int_to_rome(x):
+    numbers = [1,4,5,9,10,40,50,90,100,400,500,900,1000]
+    roman = ['I','IV','V','IX', 'X','XL', 'L','XC', 'C','CD', 'D','CM','M']
+    i = 12  
+    roman_numeral = ''
+    while x != 0:
+        if numbers[i] <= x:    
+            roman_numeral += roman[i] 
+            x = x - numbers[i]
+        else:
+            i -= 1 # i = i - 1
+    return roman_numeral 
 
-print("hello WOrld")
-intpi = input("input num")
-if intpi.isdigit():
-    intpi = int(intpi)
-    if intpi<100 :
-        num=int(intpi)
-        print(f"romal normal is {num}")
-    else: 
-        print("put a number less than 100")
-else:
-    print("put num not englis")
+print(int_to_rome(88))
+print(int_to_rome(4))
+print(int_to_rome(1249))
+print(int_to_rome(67))
+    
